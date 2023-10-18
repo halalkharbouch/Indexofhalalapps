@@ -10,15 +10,16 @@ from sqlalchemy.orm import relationship
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from functools import wraps
 import smtplib
+import os
 
-MY_EMAIL = 'initialisingben@gmail.com'
-MY_PASSWORD = 'pglqseklmynfasop'
+MY_EMAIL = os.environ.get('my_email')
+MY_PASSWORD = os.environ.get('email_password')
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('secret_key')
 
 # Connect DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///iha.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('database_url')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
