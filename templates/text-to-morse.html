@@ -1,0 +1,43 @@
+{% include "header.html" %}
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Text To Morse Code</h2>
+                    <p class="text-muted">Translate text to Morse code swiftly. Unlock a classic communication method with our easy-to-use app.</p>
+                </div>
+            </div>
+            <div class="row pt-5 pb-5">
+                <div class="col-md-6">
+                    <div class="text-center cards">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Text</h4>
+                                <form action="{{ url_for("text_to_morse") }}" method="post">
+                                <textarea name="text" style="width: 100%;"></textarea>
+                                <button class="btn btn-primary" type="submit">Convert To Morse Code</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center cards">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Morse</h4>
+                                <form action="{{ url_for("download", code=morse_code) }}" method="post">
+                                <textarea style="width: 100%;">{% if morse_code %}{{ morse_code }}{% endif %}</textarea>
+                                <button class="btn btn-primary" type="submit">Download Morse Code</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% include "footer.html" %}

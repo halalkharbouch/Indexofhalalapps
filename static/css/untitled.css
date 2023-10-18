@@ -1,0 +1,29 @@
+.card {
+  background: #27262e;
+}
+
+textarea {
+  height: 380px;
+  width: 372px;
+  color: white;
+  padding: 10px;
+  background: #2d2c38;
+  border-radius: 10px;
+  border-color: #27262e;
+}
+
+div .custom-align {
+}
+
+div .d-flex {
+}
+
+div .justify-content-center {
+}
+
+div .cards {
+}
+
+.container-footer {
+}
+
